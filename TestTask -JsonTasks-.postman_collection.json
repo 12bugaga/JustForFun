@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "33d63b33-11e5-491f-902a-e17aabe92741",
+		"name": "TestTask \"JsonTasks\"",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15052050"
+	},
+	"item": [
+		{
+			"name": "Add jsonTasks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"[{\\\"1\\\": \\\"value1\\\"},{\\\"10\\\": \\\"value32\\\"},{\\\"5\\\": \\\"value2\\\"}]\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/JsonTask/json-values",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"JsonTask",
+						"json-values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get jsonTasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/JsonTask/json-values?MinCode=3&MaxCode=1010&IsEmptyValue=false",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"JsonTask",
+						"json-values"
+					],
+					"query": [
+						{
+							"key": "MinCode",
+							"value": "3"
+						},
+						{
+							"key": "MaxCode",
+							"value": "1010"
+						},
+						{
+							"key": "IsEmptyValue",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://localhost:44338/api/v1",
+			"type": "string"
+		}
+	]
+}
